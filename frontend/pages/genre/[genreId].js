@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import { baseUrl, fetchQuery } from '../../utils'
+import { fetchQuery } from '../../utils'
 import { MovieCard } from '../../components/MovieCard'
 
 export default function Genre({ genre }) {
@@ -21,7 +21,7 @@ export default function Genre({ genre }) {
 			</div>
 			<section className='grid grid-cols-1 sm:grid-cols-2 py-10 gap-1 sm:gap-6 lg:gap-10 items-stretch md:grid-cols-3 lg:grid-cols-4'>
 				{genre.movies.map((movie) => (
-					<MovieCard movie={movie} baseUrl={baseUrl} />
+					<MovieCard key={movie.title} movie={movie} />
 				))}
 			</section>
 		</Layout>

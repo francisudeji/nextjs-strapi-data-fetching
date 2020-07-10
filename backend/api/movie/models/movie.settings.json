@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "name": "movie"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "overview": {
+      "type": "text",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "runtime": {
+      "type": "integer"
+    },
+    "release_date": {
+      "type": "date"
+    },
+    "genres": {
+      "collection": "genre",
+      "via": "movies",
+      "dominant": true
+    }
+  }
+}

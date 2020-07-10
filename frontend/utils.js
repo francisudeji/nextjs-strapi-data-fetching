@@ -1,4 +1,4 @@
-const baseUrl = process.env.BASE_URL
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
 async function fetchQuery(path, params = null) {
 	let url
